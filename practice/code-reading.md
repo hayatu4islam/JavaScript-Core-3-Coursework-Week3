@@ -15,7 +15,7 @@ Take a look at the following code:
 ```
 
 Explain why line 4 and line 6 output different numbers.
-
+// The first x is global while the second x is local to the function.
 ## Question 2
 
 Take a look at the following code:
@@ -35,6 +35,12 @@ console.log(y)
 
 What will be the output of this code. Explain your answer in 50 words or less.
 
+The output of the code is as shown below:
+10
+undefined
+ReferenceError: y is not defined
+The first console.log(f1()) prints the value of x that is declared globally, so there is not problem with that. Since the function f1() does not have a return value, it prints undefined.
+Finally, an attempt to print the value of y produces a reference error because y is not defined. Even though y is defined, but it was defined locally in the function body. So anywhere outside the function, the variable is not available.
 ## Question 3
 
 Take a look at the following code:
@@ -62,3 +68,8 @@ console.log(y);
 ```
 
 What will be the output of this code. Explain your answer in 50 words or less.
+
+The output is:
+9
+{ x: 10 }
+Calling f1(x) does not print anything because there is no code to print the value. The value of x, which is declared globally, is printed. Similarly, f2(y) was only invoked but not printed. The value of object y is printed after declared globally.
